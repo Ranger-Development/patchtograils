@@ -1,0 +1,29 @@
+{
+  "name": "@ranger/patchtograils",
+  "version": "1.0.0",
+  "description": "patch gradle files to use grails instead of jcenter",
+  "main": "index.js",
+  "bin": {
+    "patch-to-grails": "cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ranger-Development/patchtograils.git"
+  },
+  "keywords": [
+    "jcenter",
+    "grails"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ranger-Development/patchtograils/issues"
+  },
+  "homepage": "https://github.com/Ranger-Development/patchtograils#readme",
+  "dependencies": {
+    "commander": "^12.1.0"
+  }
+}

@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/Ranger-Development/patchtograils#readme",
   "dependencies": {
-    "commander": "^12.1.0"
+    "commander": "^11.0.0"
   }
 }

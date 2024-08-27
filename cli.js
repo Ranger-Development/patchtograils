@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const { Command } = require('commander');
-const recurseDirectory = require('./index.js');
+const { recurseDirectory, searchAndReplaceStringInFile }  = require('./index.js');
 
 const program = new Command();
 program.version('1.0.0');

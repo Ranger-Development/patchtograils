@@ -12,7 +12,7 @@ var recurseDirectory = function(dir, done) {
       file = path.resolve(dir, file);
       fs.stat(file, function(err, stat) {
         if (stat && stat.isDirectory()) {
-          walk(file, function(err, res) {
+          recurseDirectory(file, function(err, res) {
             results = results.concat(res);
             if (!--pending) done(null, results);
           });
@@ -28,4 +28,22 @@ var recurseDirectory = function(dir, done) {
   });
 };
 
-module.exports = recurseDirectory;
+// define function searchAndReplaceStringInFile
+// this function will search for a string in a file and replace it with another string
+function searchAndReplaceStringInFile(filePath, searchString, replaceString) {
+  fs.readFile(filePath, 'utf8', function (err, data) {
+    if (err) {
+      return console.log(err);
+    }
+    var result = data.replace(searchString, replaceString);
+    fs.writeFile(filePath, result, 'utf8', function (err) {
+      if (err) return console.log(err);
+    });
+  });
+}
+
+// export searchAndReplaceStringInFile and recurseDirectory functions 
+module.exports = {
+  recurseDirectory,
+  searchAndReplaceStringInFile
+};

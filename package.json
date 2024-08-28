@@ -1,5 +1,5 @@
 {
-  "name": "@ranger/patchtograils",
+  "name": "@ranger.dev/patchtograils",
   "version": "1.0.0",
   "description": "patch gradle files to use grails instead of jcenter",
   "main": "index.js",

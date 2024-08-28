@@ -37,8 +37,10 @@ function searchAndReplaceStringInFile(filePath, searchString, replaceString) {
     }
     if (data.includes(searchString)) {
       console.log(`Found ${searchString} in ${filePath}`);
-      var result = data.replace(searchString, replaceString);
-      fs.writeFile(filePath, result, 'utf8', function (err) {
+      while (data.includes(searchString)) {
+        data = data.replace(searchString, replaceString);
+      }
+      fs.writeFile(filePath, data, 'utf8', function (err) {
         if (err) return console.log(err);
       });
     }

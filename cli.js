@@ -24,6 +24,12 @@ program.action((options) => {
     else {
       options.replace = processMultilineString(options.replace);
     }
+
+    if (options.replace.includes(options.search)) {
+      console.error('The replace string cannot contain the search string');
+      process.exit(1);
+    }
+
     console.log(`Searching for ${options.search} and replacing it with ${options.replace}`);
     const directory = options.current ? process.cwd() : options.directory;
     console.log(`Searching for gradle files in ${directory}`);

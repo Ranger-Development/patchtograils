@@ -2,8 +2,15 @@
 
 const { Command } = require('commander');
 const { recurseDirectory, searchAndReplaceStringInFile, processMultilineString }  = require('./index.js');
+const fs = require('fs');
+const path = require('path');
+// Read the version number from package.json
+const packageJsonPath = path.join(__dirname, 'package.json');
+const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
+const version = packageJson.version;
+
 const program = new Command();
-program.version('1.0.0');
+program.version(version);
 program.description('A simple CLI for checking and replacing jcenter with grails in gradle files');
 program.option('-d, --directory <directory>', 'The directory to search for gradle files');
 program.option('-c, --current', 'Use the current working directory as the search path');

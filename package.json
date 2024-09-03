@@ -1,6 +1,6 @@
 {
   "name": "@ranger.dev/patchtograils",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "patch gradle files to use grails instead of jcenter",
   "main": "index.js",
   "bin": {

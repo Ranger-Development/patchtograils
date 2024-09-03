@@ -47,8 +47,14 @@ function searchAndReplaceStringInFile(filePath, searchString, replaceString) {
   });
 }
 
+function processMultilineString(str) {
+  return str.replace(/\\n/g, '\n');
+}
+
+
 // export searchAndReplaceStringInFile and recurseDirectory functions 
 module.exports = {
   recurseDirectory,
-  searchAndReplaceStringInFile
+  searchAndReplaceStringInFile,
+  processMultilineString
 };
